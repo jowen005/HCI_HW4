@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="map.css">
+        <link rel="stylesheet" href="mapInLibrary.css">
         <script>
             // Function for when handicap entrance is selected
             function doorOpen(entranceID) {
                 // If an entrance button is already enabled, do not enable another button
-                if(document.getElementById("libaryOpenButton").disabled == false || document.getElementById("enginOpenButton").disabled == false ||
-                document.getElementById("gorOpenButton").disabled == false)
+                if(document.getElementById("libaryOpenButton").disabled == false)
                 {
                     return;
                 }
 
-                //Determine which building the entrance belongs to and enable that button and the cancel button
-                if(entranceID == "entranceEinstein" || entranceID == "entranceFront" || entranceID == "entranceFar")
-                {
-                    document.getElementById("libaryOpenButton").disabled = false;
-                    document.getElementById("cancelLibrary").disabled = false;
-                }
-                else if(entranceID == "entranceEngin")
-                {
-                    document.getElementById("enginOpenButton").disabled = false;
-                    document.getElementById("cancelEngin").disabled = false;
-
-                }
-                else if(entranceID == "entranceGor")
-                {
-                    document.getElementById("gorOpenButton").disabled = false;
-                    document.getElementById("cancelGor").disabled = false;
-                }
-                
+                //Determine which building the entrance belongs to and call that button
+         
+                document.getElementById("libaryOpenButton").disabled = false;
+                document.getElementById("cancelLibrary").disabled = false;
                 var entranceButton = document.getElementById(entranceID);
                 entranceButton.style.backgroundColor = "green";
             }
 
-            // Function for when the cancel (X) button is pressed
-            function cancelSelection(cancelButton) {
+              // Function for when the cancel (X) button is pressed
+              function cancelSelection(cancelButton) {
                 // Disable the green open button
                 if(cancelButton == "cancelLibrary")
                 {
@@ -62,7 +47,6 @@
                     document.getElementById("entranceGor").style.backgroundColor = "#2181db";
                 }
             }
-
         </script>
     </head>
     <body>
@@ -75,36 +59,19 @@
             <button id="entranceFront" class="entrance2" onclick="doorOpen('entranceFront')">H</button>
             <!-- Button for Perry Library Far Side -->
             <button id="entranceFar" class="entrance3" onclick="doorOpen('entranceFar')">H</button>
-            <!-- Button for Engineering Building -->
-            <button id="entranceEngin" class="entrance4" onclick="doorOpen('entranceEngin')">H</button>
-            <!-- Button for Goronto -->
-            <button id="entranceGor" class="entrance5" onclick="doorOpen('entranceGor')">H</button>
 
             <!-- Circle for user's location -->
             <div class="location" styl></div>
         </div>
         <!-- Button for opening the door, it is disabled by default -->
         <div id="doorOpen">
-            <a href="insideLibrary.html">
+            <a href="index.html">
                 <button id="libaryOpenButton" style="background-color: green; color: white;" disabled>Open Door</button>
-            </a>
-            <a href="insideEngin.html">
-                <button id="enginOpenButton"  style="background-color: green; color: white;" disabled>Open Door</button>
-            </a>
-            <a href="insideGor.html">
-                <button id="gorOpenButton" style="background-color: green; color: white;" disabled>Open Door</button>
             </a>
         </div>
         <!-- Selection canceling button -->
         <div id="cancel">
             <button id="cancelLibrary" style="background-color: red; color: black;" onclick="cancelSelection('cancelLibrary')" disabled>X</button>
-            <button id="cancelEngin" style="background-color: red; color: black;" onclick="cancelSelection('cancelEngin')" disabled>X</button>
-            <button id="cancelGor" style="background-color: red; color: black;" onclick="cancelSelection('cancelGor')" disabled>X</button>
-        </div>
-        <!-- Text that displays the building the entrance is to -->
-        <div id="buidlingText">
-            <textarea type="text" id="perryLibrary" disabled="true">
         </div>
     </body>
 </html>
-
