@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="mapInEngin.css">
+        <script>
+            // Function for when handicap entrance is selected
+            function doorOpen(entranceID) {
+                // If an entrance button is already enabled, do not enable another button
+                if(document.getElementById("enginOpenButton").disabled == false)
+                {
+                    return;
+                }
+
+                //Determine which building the entrance belongs to and call that button
+                document.getElementById("enginOpenButton").disabled = false;
+                document.getElementById("cancelEngin").disabled = false;
+                var entranceButton = document.getElementById(entranceID);
+                entranceButton.style.backgroundColor = "green";
+            }
+
+              // Function for when the cancel (X) button is pressed
+              function cancelSelection(cancelButton) {
+                // Disable the green open button
+                if(cancelButton == "cancelLibrary")
+                {
+                    document.getElementById("libaryOpenButton").disabled = true;
+                    document.getElementById("cancelLibrary").disabled = true;
+                    //Return the entrance to the color blue
+                    document.getElementById("entranceEinstein").style.backgroundColor = "#2181db";
+                    document.getElementById("entranceFront").style.backgroundColor = "#2181db";
+                    document.getElementById("entranceFar").style.backgroundColor = "#2181db";
+                
+                }
+                else if(cancelButton == "cancelEngin")
+                {
+                    document.getElementById("enginOpenButton").disabled = true;
+                    document.getElementById("cancelEngin").disabled = true;
+                    //Return the entrance to the color blue
+                    document.getElementById("entranceEngin").style.backgroundColor = "#2181db";
+                }
+                else if(cancelButton == "cancelGor")
+                {
+                    document.getElementById("gorOpenButton").disabled = true;
+                    document.getElementById("cancelGor").disabled = true;
+                    //Return the entrance to the color blue
+                    document.getElementById("entranceGor").style.backgroundColor = "#2181db";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <body style="background-color:gray;">
+        <div class="Map">
+            <img src="map.png" alt="Mock Interactive Map" width="800px">
+            <!-- Button for Engineering Building -->
+            <button id="entranceEngin" class="entrance4" onclick="doorOpen('entranceEngin')">H</button>
+
+            <!-- Circle for user's location -->
+            <div class="location" styl></div>
+        </div>
+        <!-- Button for opening the door, it is disabled by default -->
+        <div id="doorOpen">
+            <a href="index.html">
+                <button id="enginOpenButton"  style="background-color: green; color: white;" disabled>Open Door</button>
+            </a>
+        </div>
+        <!-- Selection canceling button -->
+        <div id="cancel">
+            <button id="cancelEngin" style="background-color: red; color: black;" onclick="cancelSelection('cancelEngin')" disabled>X</button>
+        </div>
+    </body>
+</html>

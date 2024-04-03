@@ -1,0 +1,138 @@
+/* Make sure web page elements don't mess up in browser */
+body {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* Centered image code */
+.Map {
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+/* #Map {
+    position: relative;
+    width: 50%;
+  } */
+
+  /* Make the image responsive */
+/* #Map img {
+    width: 100%;
+    height: auto;
+  } */
+
+  /* Style the Eientsein's Bagels button and place it over the entrance*/
+.Map .entrance1 {
+    position: absolute;
+    bottom: 41.5%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #2181db;
+    color: white;
+    font-size: 8px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+   /* Style the Library Front button and place it over the entrance*/
+  .Map .entrance2 {
+    position: absolute;
+    bottom: 45%;
+    left: 40.5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #2181db;
+    color: white;
+    font-size: 8px;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+     /* Style the Library Far Side button and place it over the entrance*/
+     .Map .entrance3 {
+        position: absolute;
+        bottom: 40%;
+        left: 48.5%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #2181db;
+        color: white;
+        font-size: 8px;
+        padding: 10px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+         /* Style the Engineering button and place it over the entrance*/
+     .Map .entrance4 {
+        position: absolute;
+        top: 15%;
+        left: 39.5%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #2181db;
+        color: white;
+        font-size: 8px;
+        padding: 10px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+        /* Style the Goronto button and place it over the entrance*/
+     .Map .entrance5 {
+        position: absolute;
+        bottom: 24%;
+        left: 66.5%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #2181db;
+        color: white;
+        font-size: 8px;
+        padding: 10px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+      /* Style for the location marker circle */
+      .location {
+        position: absolute;
+        top: 12%;
+        left: 23%;
+        height: 20px;
+        width: 20px;
+        background-color: #d30b0b;
+        border-radius: 50%;
+      }
+
+      /* Style for open door button */
+      #doorOpen {
+        display: flex;
+        justify-content: center;
+        height: 30px;
+      }
+
+       /* Style for the Cancel (X) button */
+       #cancel {
+        position: fixed;
+        top: 30px;
+        left: 100px;
+        height: 50px;
+        width: 70px;
+      }
+
+      /* Styling for disabled button */
+      button:disabled {
+        opacity: 0; /* Make button invisible while disabled */
+      }
