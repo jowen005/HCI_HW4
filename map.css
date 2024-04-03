@@ -1,7 +1,13 @@
+/* Make sure web page elements don't mess up in browser */
+body {
+    width: 960px;
+    margin: 0 auto;
+}
 
 /* Centered image code */
 .Map {
     height: 800px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,8 +28,8 @@
   /* Style the Eientsein's Bagels button and place it over the entrance*/
 .Map .entrance1 {
     position: absolute;
-    bottom: 38%;
-    left: 32%;
+    bottom: 41.5%;
+    left: 19%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: #2181db;
@@ -108,4 +114,16 @@
         width: 20px;
         background-color: #d30b0b;
         border-radius: 50%;
+      }
+
+      /* Style for open door button */
+      #doorOpen {
+        display: flex;
+        justify-content: center;
+        height: 30px;
+      }
+
+      /* Styling for disabled button */
+      button:disabled {
+        opacity: 0; /* Make button invisible while disabled */
       }

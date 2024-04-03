@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="map.css">
+        <script>
+            function doorOpen(entranceClass) {
+                document.getElementById("doorOpenButton").disabled = false;
+                var entranceButton = document.getElementById(entranceClass);
+                entranceButton.style.backgroundColor = "green";
+            }
+        </script>
+    </head>
+    <body>
+        <body style="background-color:gray;">
+        <div class="Map">
+            <img src="map.png" alt="Mock Interactive Map" width="800px">
+            <!-- Button for Perry Library Einstein's Bagels -->
+            <button id ="entraceEinstein" class="entrance1" onclick="doorOpen('entraceEinstein')">H</button>
+            <!-- Button for Perry Library Front -->
+            <button id="entranceFront" class="entrance2" onclick="doorOpen('entranceFront')">H</button>
+            <!-- Button for Perry Library Far Side -->
+            <button id="entranceFar" class="entrance3" onclick="doorOpen('entranceFar')">H</button>
+            <!-- Button for Engineering Building -->
+            <button id="entranceEngin" class="entrance4" onclick="doorOpen('entranceEngin')">H</button>
+            <!-- Button for Goronto -->
+            <button id="entranceGor" class="entrance5" onclick="doorOpen('entranceGor')">H</button>
+
+            <!-- Circle for user's location -->
+            <div class="location"></div>
+        </div>
+        <!-- Button for opening the door, it is disabled by default -->
+        <div id="doorOpen">
+            <button id="doorOpenButton" style="background-color: green; color: white;" disabled>Open Door</button>
+        </div>
+    </body>
+</html>
+
